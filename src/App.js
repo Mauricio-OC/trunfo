@@ -18,20 +18,22 @@ export default class App extends Component {
   };
 
   onInputChange = ({ target }) => {
-    const { name, value } = target;
+    const { name } = target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
     this.setState({
       [name]: value,
     }, () => {
+      const min = 0;
+      const max = 90;
+      const total = 210;
       const {
         cardName,
         cardDescription,
+        cardImage,
         cardAttr1,
         cardAttr2,
         cardAttr3,
       } = this.state;
-      const min = 0;
-      const max = 90;
-      const total = 210;
       const cardSum = +cardAttr1 + +cardAttr2 + +cardAttr3;
       if (cardName
         && cardDescription
@@ -116,3 +118,9 @@ export default class App extends Component {
   }
 }
 // INCIANDO! vrummm
+// referencias videos youtube => https://www.youtube.com/watch?v=ab7nqBDC7iE&ab_channel=MateusFernandes
+// https://www.youtube.com/watch?v=uRT_-8uPvkg&ab_channel=MateusFernandes
+// https://www.youtube.com/watch?v=WSgCWVDvUK4&ab_channel=MateusFernandes
+// https://www.youtube.com/watch?v=IuZkmFpsJk0&ab_channel=MateusFernandes
+// https://www.youtube.com/watch?v=Nd69RXF41kA&ab_channel=MateusFernandes
+// https://www.youtube.com/watch?v=JFwKSskAAZ0&ab_channel=MateusFernandes
