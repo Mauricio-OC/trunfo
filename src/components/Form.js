@@ -109,7 +109,7 @@ export default class Form extends Component {
         </div>
         <div>
           <label htmlFor="trunfo-input">
-            Super trunfo
+            Super trunfo:
             <input
               type="checkbox"
               data-testid="trunfo-input"
