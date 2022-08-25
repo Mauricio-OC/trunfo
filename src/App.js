@@ -59,17 +59,26 @@ export default class App extends Component {
 
   onSaveButtonClick = (card) => {
     const { cards } = this.state;
-    this.setState(() => ({
-      cards: [...cards, card],
-      cardName: '',
-      cardDescription: '',
-      cardAttr1: '0',
-      cardAttr2: '0',
-      cardAttr3: '0',
-      cardImage: '',
-      cardRare: 'normal',
-      cardTrunfo: false,
-    }));
+    this.setState(
+      () => ({
+        cards: [...cards, card],
+        cardName: '',
+        cardDescription: '',
+        cardAttr1: '0',
+        cardAttr2: '0',
+        cardAttr3: '0',
+        cardImage: '',
+        cardRare: 'normal',
+        cardTrunfo: false,
+      }),
+      () => {
+        if (card.cardTrunfo) {
+          this.setState({
+            hasTrunfo: true,
+          });
+        }
+      },
+    );
   };
 
   render() {

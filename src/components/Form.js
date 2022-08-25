@@ -12,7 +12,7 @@ export default class Form extends Component {
       cardImage,
       cardRare,
       cardTrunfo,
-      // hasTrunfo,
+      hasTrunfo,
       isSaveButtonDisabled,
       onInputChange,
       onSaveButtonClick,
@@ -110,14 +110,16 @@ export default class Form extends Component {
         <div>
           <label htmlFor="trunfo-input">
             Super trunfo:
-            <input
-              type="checkbox"
-              data-testid="trunfo-input"
-              id="trunfo-input"
-              name="cardTrunfo"
-              checked={ cardTrunfo }
-              onChange={ onInputChange }
-            />
+            {
+              hasTrunfo ? <p>Você já tem um Super Trunfo em seu baralho</p> : <input
+                type="checkbox"
+                data-testid="trunfo-input"
+                id="trunfo-input"
+                name="cardTrunfo"
+                checked={ cardTrunfo }
+                onChange={ onInputChange }
+              />
+            }
           </label>
         </div>
         <div>
