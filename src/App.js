@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
+import Lista from './components/Lista';
 
 export default class App extends Component {
   state = {
@@ -93,6 +94,7 @@ export default class App extends Component {
       cardTrunfo,
       hasTrunfo,
       isSaveButtonDisabled,
+      cards,
     } = this.state;
 
     return (
@@ -121,6 +123,9 @@ export default class App extends Component {
           cardAttr3={ cardAttr3 }
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
+        />
+        <Lista
+          cards={ cards }
         />
       </div>
     );

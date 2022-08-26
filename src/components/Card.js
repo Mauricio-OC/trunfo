@@ -17,7 +17,7 @@ export default class Card extends Component {
 
     return (
       <>
-        <div>
+        <div className={ `card-${cardName}` }>
           <span data-testid="name-card">
             { cardName }
           </span>
